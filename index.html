@@ -3,67 +3,1404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasim Paykari</title>
-    <link rel="icon" type="image/x-icon" href="image/favicon6.ico">
+    <title>Nasim Paykari, Ph.D. Candidate | Robotics, Autonomous Navigation & Industrial Control</title>
+    <meta name="description" content="Personal academic and industry portfolio of Nasim Paykari - Ph.D. Candidate in Computer Science at Fordham University specializing in Robotics, Autonomous Navigation, Blockchain Consensus, and Industrial Control Systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #999999;
+        :root {
+            --primary: #0e365b;
+            --primary-light: #1a5286;
+            --primary-dark: #09243e;
+            --accent: #0284c7;
+            --accent-soft: #e0f2fe;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+            --radius: 10px;
+            --radius-sm: 6px;
         }
 
-        li {
-          float: left;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        li a {
-          display: block;
-          color: #111111;
-          text-align: center;
-          padding: 16px;
-          text-decoration: none;
+        html {
+            scroll-behavior: smooth;
         }
 
-        li a:hover {
-          background-color: #555555;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.65;
+            color: var(--text);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Header / Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: #ffffff !important;
+            padding: 0.4rem 0.9rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem !important;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 4.5rem 1.5rem 3rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-soft);
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #bae6fd;
+        }
+
+        .hero-badge .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+        }
+
+        h1.hero-name {
+            font-size: 2.85rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-title {
+            font-size: 1.35rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-bio {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 860px;
+            margin-bottom: 1.8rem;
+            line-height: 1.7;
+        }
+
+        .hero-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            align-items: center;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-contacts a {
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .hero-contacts a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.3rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: var(--text);
+            border-color: var(--border);
+        }
+        .btn-secondary:hover {
+            background: var(--bg-alt);
+            border-color: var(--border-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: var(--accent-soft);
+            color: var(--primary);
+            border-color: #bae6fd;
+        }
+        .btn-accent:hover {
+            background: #bae6fd;
+        }
+
+        /* Pillars Summary */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: #cbd5e1;
+        }
+
+        .pillar-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: var(--accent-soft);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 0.35rem;
+        }
+
+        .section-title {
+            font-size: 1.95rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.35rem;
+            max-width: 750px;
+        }
+
+        /* CV Track Switcher Section */
+        #cv-suite {
+            background-color: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cv-track-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .cv-tab-btn {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-tab-btn:hover {
+            color: var(--primary);
+            border-color: var(--border-hover);
+        }
+
+        .cv-tab-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cv-tab-btn .badge-counter {
+            font-size: 0.72rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.25);
+            font-weight: 700;
+        }
+
+        .cv-tab-btn:not(.active) .badge-counter {
+            background: var(--border);
+            color: var(--text-muted);
+        }
+
+        .cv-content-panel {
+            display: none;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cv-content-panel.active {
+            display: block;
+            animation: fadeIn 0.25s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cv-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cv-panel-header h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cv-panel-header p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .cv-download-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-soft);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            border: 1px solid #bae6fd;
+            transition: all 0.2s;
+        }
+
+        .cv-download-pill:hover {
+            background: #bae6fd;
+        }
+
+        /* CV Inner Layout */
+        .cv-subhead {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border-bottom: 2px solid var(--accent-soft);
+            padding-bottom: 0.35rem;
+            margin: 1.75rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .experience-item {
+            margin-bottom: 1.6rem;
+        }
+
+        .exp-row-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-role {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .exp-org {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .exp-location {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .exp-bullets {
+            margin-top: 0.5rem;
+            padding-left: 1.3rem;
+        }
+
+        .exp-bullets li {
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .skill-group {
+            margin-bottom: 0.75rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .skill-group strong {
+            color: var(--primary);
+            min-width: 160px;
+            display: inline-block;
+        }
+
+        /* Publications List */
+        .pub-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .pub-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 1.25rem 1.4rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .pub-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: var(--shadow);
+            transform: translateX(3px);
+        }
+
+        .pub-badge-year {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: var(--bg-alt);
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .pub-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+            padding-right: 4.5rem;
+            line-height: 1.4;
+        }
+
+        .pub-card-authors {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .pub-card-authors strong {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .pub-card-venue {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            font-style: italic;
+            margin-bottom: 0.65rem;
+        }
+
+        .pub-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Teaching Section */
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .teach-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .teach-role {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        .teach-card h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin: 0.25rem 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .teach-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .teach-desc {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /* News / Updates Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--accent-soft);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.75rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.45rem;
+            top: 0.2rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 3px solid var(--accent);
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-text {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: #cbd5e1;
+            padding: 3.5rem 1.5rem 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-brand h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h5 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            h1.hero-name {
+                font-size: 2.2rem;
+            }
+            .hero-title {
+                font-size: 1.15rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .cv-panel-header {
+                flex-direction: column;
+            }
+            .cv-tab-btn {
+                width: 100%;
+                justify-content: space-between;
+            }
         }
     </style>
-</head> 
+</head>
 <body>
-    <div style="margin:auto; background-color:#111111; color:#CCCCCC; padding:30px;">
-        <h1>
-            Nasim Paykari
-        </h1>
-    </div>
-    
-    <div padding:5px;">
-    </div>
-    
-    <!-- Navigation Menu -->
-    <ul style= "width: 100%;">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#openended">Open-ended</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#github">Github</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-<!--
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/xxLjUeVPYYk" 
 
-    title="YouTube video player" frameborder="0" 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Nasim <span>Paykari</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#cv-suite">CV Suite (3 Tracks)</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#industry">Industrial Track</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#cv-suite" class="nav-cta">View Resumes</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    <!-- Hero Section -->
+    <header class="hero" id="about">
+        <div class="hero-container">
+            <div>
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    <span>Ph.D. Candidate in CS &middot; Expected Defense: May 2027</span>
+                </div>
+                <h1 class="hero-name">Nasim Paykari</h1>
+                <div class="hero-title">Robotics & Autonomous Navigation &middot; Decentralized Consensus &middot; Industrial Control (DCS/PLC)</div>
+                <p class="hero-bio">
+                    Final-year Computer Science Ph.D. candidate at <strong>Fordham University</strong>, working under the joint advisement of <strong>Prof. Damian M. Lyons</strong> and <strong>Prof. Mohammad Rahouti</strong>. My research bridges <strong>cooperative visual navigation</strong> and <strong>blockchain consensus</strong>. Prior to my doctoral studies, I completed an M.Sc. in Automation Engineering and spent over <strong>10 years directing industrial control systems (DCS, ESD, F&G, PLC)</strong> on high-consequence infrastructure.
+                </p>
 
-    allowfullscreen>
-        
-    </iframe>
--->
-    
-    <p>This is a simple webpage created using HTML and hosted on GitHub.</p>
-    <h2>Coming Soon ...</h2>
+                <div class="hero-contacts">
+                    <span>📍 Fort Lee, NJ</span>
+                    <a href="mailto:Paykari.Nasim@gmail.com">✉️ Paykari.Nasim@gmail.com</a>
+                    <a href="https://linkedin.com/in/nasimpaykari" target="_blank" rel="noopener">🔗 LinkedIn</a>
+                    <a href="https://github.com/nasimpaykari" target="_blank" rel="noopener">💻 GitHub</a>
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="#cv-suite" class="btn btn-primary">Browse 3 Tailored CVs</a>
+                    <a href="#publications" class="btn btn-secondary">Peer-Reviewed Papers</a>
+                    <a href="#industry" class="btn btn-accent">10+ Yrs Industrial Engineering</a>
+                </div>
+            </div>
+
+            <!-- Pillars -->
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤖</div>
+                    <h3>Robotics & Visual Homing</h3>
+                    <p>Cross-view landmark recognition, topological place recognition, and federated perception stacks in GPS-denied domains using C++, ROS2, OpenCV, and CUDA.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">⛓️</div>
+                    <h3>Decentralized Consensus</h3>
+                    <p>Architect of <em>RoboStake</em> and Witness-BFT with signature trees, enabling provable, tamper-resistant multi-robot cooperative localization without single points of failure.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">⚙️</div>
+                    <h3>Industrial Automation & DCS</h3>
+                    <p>10+ years of plant commissioning, SIL 2/3 safety systems, Siemens PCS7, HIMA Safety PLCs, Yokogawa Centum, and execution across 25,000+ I/O facilities.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CV Suite Section with 3 Integrated Tracks -->
+    <section id="cv-suite" class="container">
+        <div class="section-header">
+            <div class="section-badge">Interactive Portfolio Suite</div>
+            <h2 class="section-title">Select Professional Track</h2>
+            <p class="section-desc">Explore tailored resumes and academic credentials structured specifically for target roles in Academic Faculty/Postdoc appointments, Control Systems/DCS Engineering, and Robotics Software.</p>
+        </div>
+
+        <!-- Track Selector Tabs -->
+        <div class="cv-track-tabs" role="tablist">
+            <button class="cv-tab-btn active" onclick="switchTrack('track-academic', this)" role="tab" aria-selected="true">
+                <span>🎓 Track 1: Full Academic CV</span>
+                <span class="badge-counter">Faculty / Postdoc</span>
+            </button>
+            <button class="cv-tab-btn" onclick="switchTrack('track-control', this)" role="tab" aria-selected="false">
+                <span>⚙️ Track 2: Control Systems & DCS/PLC</span>
+                <span class="badge-counter">10+ Yrs Field</span>
+            </button>
+            <button class="cv-tab-btn" onclick="switchTrack('track-robotics', this)" role="tab" aria-selected="false">
+                <span>🤖 Track 3: Robotics & Autonomous Navigation</span>
+                <span class="badge-counter">Industry</span>
+            </button>
+        </div>
+
+        <!-- PANEL 1: Academic CV -->
+        <div id="track-academic" class="cv-content-panel active">
+            <div class="cv-panel-header">
+                <div>
+                    <h3>Curriculum Vitae: Academic Faculty & Postdoctoral Research</h3>
+                    <p>Focus: Cooperative Robotics, Visual Navigation, Consensus Protocols, Nonlinear Control, University Teaching</p>
+                </div>
+                <!-- <a href="CV_Academic_Nasim_Paykari.pdf" class="cv-download-pill" download>📄 Download Academic CV (PDF)</a> -->
+            </div>
+
+            <div class="cv-subhead">Education & Academic Background</div>
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Ph.D. in Computer Science</span>
+                    <span class="exp-date">2023 -- May 2027 (Expected)</span>
+                </div>
+                <div class="exp-org">Fordham University &middot; New York, NY</div>
+                <p style="font-size:0.9rem; color:var(--text-muted); margin-top:0.2rem;">
+                    <em>Dissertation:</em> Integrating Blockchain and Wide Area Visual Navigation for Secure, Decentralized Autonomous Robotic Systems<br>
+                    <em>Advisors:</em> Prof. Damian M. Lyons, Prof. Mohammad Rahouti
+                </p>
+            </div>
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">M.Sc. in Instrumentation & Automation Engineering</span>
+                    <span class="exp-date">2010 -- 2013</span>
+                </div>
+                <div class="exp-org">Shiraz University &middot; Shiraz, Iran</div>
+                <p style="font-size:0.9rem; color:var(--text-muted); margin-top:0.2rem;">
+                    <em>Thesis:</em> Fuzzy Controller for Wall Following Robot with Stability Analysis (MIMO Mamdani Systems)
+                </p>
+            </div>
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">B.Sc. in Electronic Engineering</span>
+                    <span class="exp-date">2004 -- 2009</span>
+                </div>
+                <div class="exp-org">Lorestan University &middot; Khorramabad, Iran</div>
+            </div>
+
+            <div class="cv-subhead">University Teaching & Pedagogical Appointments</div>
+            <ul class="exp-bullets">
+                <li><strong>Instructor of Record -- Programming with Python (CISC-5380):</strong> Fordham University (Spring 2026) -- Graduate course covering variables, numbers, strings, loops, conditional statements, lists, dictionaries, functions, classes, and OOP.</li>
+                <li><strong>Instructor of Record -- Discrete Structures (CISC-1100):</strong> Fordham University (Fall 2025) -- Undergraduate course covering propositional logic, set theory, proofs, combinatorics, and graph theory.</li>
+                <li><strong>Extended Teaching Assistant -- Discrete Structures (CISC-1100/1400):</strong> Fordham University (Fall 2024 -- Spring 2025).</li>
+                <li><strong>Preparing Future Faculty (PFF) Fellow:</strong> Fordham University (2024--2025) -- Rigorous evidence-based pedagogy, UDL, and inclusive teaching workshops.</li>
+            </ul>
+
+            <div class="cv-subhead">Honors, Fellowships & Academic Recognition</div>
+            <ul class="exp-bullets">
+                <li>Summer Undergraduate Research Supervisor Award, Fordham University (2025)</li>
+                <li>Preparing Future Faculty (PFF) Fellow, Fordham University (2024--2025)</li>
+                <li>Professional Development Fellowship (Robotics & Blockchain), Fordham University (2024)</li>
+                <li>Best Paper Award Finalist / Candidate, IEEE/UR Conference (2024)</li>
+                <li>Professional Development Award (Fordham University & IBM Research Collaboration, 2023)</li>
+            </ul>
+
+            <div class="cv-subhead">Peer Review & Service</div>
+            <p style="font-size:0.9rem; color:var(--text);"><strong>Journal & Conference Reviewer:</strong> <em>IEEE DSC</em>, <em>Wiley</em>, <em>IEEE Internet of Things Journal</em>, <em>Information Fusion Journal</em>, <em>ICTAI</em>, <em>IRC Conference</em>.</p>
+        </div>
+
+        <!-- PANEL 2: Control Systems & DCS/PLC -->
+        <div id="track-control" class="cv-content-panel">
+            <div class="cv-panel-header">
+                <div>
+                    <h3>Senior Lead Control Systems & Industrial Automation Engineer</h3>
+                    <p>Focus: Distributed Control Systems (DCS), SIS (ESD/FGS), Safety PLCs, Siemens PCS7, Yokogawa</p>
+                </div>
+                <!-- <a href="CV_Control_Systems_Nasim_Paykari.pdf" class="cv-download-pill" download>📄 Download Automation Resume (PDF)</a> -->
+            </div>
+
+            <div class="cv-subhead">Core Engineering Competencies</div>
+            <div class="skill-group"><strong>DCS & Automation Platforms:</strong> Siemens PCS7 / STEP 7, TIA Portal, Yokogawa Centum CS3000/VP, WinCC, SCADA, HMI</div>
+            <div class="skill-group"><strong>Safety Instrumented Systems (SIS):</strong> Emergency Shutdown Systems (ESD), Fire & Gas (FGS), HIMA Safety PLC, SIL 2/3 Analysis</div>
+            <div class="skill-group"><strong>Industrial Standards:</strong> IEC 61508, IEC 61511, IEC 61131-3 (LAD, FBD, SCL, STL), Cause-and-Effect Matrices, FAT/SAT</div>
+            <div class="skill-group"><strong>Industrial Networking:</strong> Modbus RTU/TCP, Profibus DP/PA, Profinet, Industrial Ethernet, OPC UA/DA, PDCS Interfacing</div>
+
+            <div class="cv-subhead">Industrial Track Record (10+ Years Experience)</div>
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Senior Control Systems Supervisor</span>
+                    <span class="exp-date">2019 -- 2021</span>
+                </div>
+                <div class="exp-org">Petropars Operation & Management Co. (POMC) &middot; Tehran, Iran</div>
+                <ul class="exp-bullets">
+                    <li>Directed engineering execution, FAT/SAT, pre-commissioning, and plant startup for refinery Distributed Control Systems (DCS) and Power Distribution Control Systems (PDCS).</li>
+                    <li>Led a multi-disciplinary team of 15+ automation engineers and instrumentation specialists through complex cold/hot loop testing across 25,000+ I/O channels.</li>
+                    <li>Validated Emergency Shutdown (ESD) and Fire & Gas (FGS) trip matrices on safety PLC platforms (HIMA, Siemens Fail-Safe), strictly ensuring SIL 2/SIL 3 functional safety compliance.</li>
+                    <li>Resolved critical system communication bottlenecks between Siemens PCS7 servers, third-party vendor package PLCs, and electrical switchgear via Profibus and Modbus protocols.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Control Systems Supervisor</span>
+                    <span class="exp-date">2015 -- 2019</span>
+                </div>
+                <div class="exp-org">Petropars Operation & Management Co. (POMC) &middot; Tehran, Iran</div>
+                <ul class="exp-bullets">
+                    <li>Supervised Site Acceptance Testing (SAT) and system handover of DCS and SIS architectures during plant construction and commissioning phases.</li>
+                    <li>Coordinated with process and piping disciplines to tune PID loops, interlock logic, and surge control systems, optimizing process stability and reducing startup deviations.</li>
+                    <li>Authored standardized commissioning SOPs, system cutover strategies, and maintenance diagnostic manuals adopted for refinery control rooms.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Control & Instrumentation Engineer</span>
+                    <span class="exp-date">2012 -- 2015</span>
+                </div>
+                <div class="exp-org">P-GR (Electrical & Control Department) &middot; Tehran, Iran</div>
+                <ul class="exp-bullets">
+                    <li>Designed complete instrumentation engineering deliverables: I/O allocation lists, logic diagrams, wiring schematics, cabinet layouts, and control narrative philosophies.</li>
+                    <li>Developed and validated PLC control logic (LAD, FBD, SCL) and designed intuitive SCADA/HMI graphical user interfaces in Siemens WinCC.</li>
+                    <li>Engineered diesel generator automated control logic, power management sequences, and remote telemetry links.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Safety Systems Engineer</span>
+                    <span class="exp-date">2010 -- 2012</span>
+                </div>
+                <div class="exp-org">Azar Imen Persian &middot; Tehran, Iran</div>
+                <ul class="exp-bullets">
+                    <li>Engineered hardware loop drawings, logic interlocks, and sensor integration for industrial Fire & Gas detection and deluge extinguishing systems across power plants and petrochemical units.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PANEL 3: Robotics & Autonomous Navigation -->
+        <div id="track-robotics" class="cv-content-panel">
+            <div class="cv-panel-header">
+                <div>
+                    <h3>Senior Robotics & Autonomous Navigation Engineer</h3>
+                    <p>Focus: C++, ROS/ROS2, Visual Homing, SLAM, Multi-Agent Coordination & Real-Time Edge Autonomy</p>
+                </div>
+                <!-- <a href="CV_Robotics_Nasim_Paykari.pdf" class="cv-download-pill" download>📄 Download Robotics Resume (PDF)</a> -->
+            </div>
+
+            <div class="cv-subhead">Technical Core</div>
+            <div class="skill-group"><strong>Languages & Tools:</strong> C++, Python, CUDA, MATLAB/Simulink, Git, Linux/Unix, Docker</div>
+            <div class="skill-group"><strong>Robotics & Vision:</strong> ROS/ROS2, OpenCV, Visual Homing, Visual Place Recognition (VPR), SLAM, Sensor Fusion</div>
+            <div class="skill-group"><strong>Control Theory:</strong> Non-linear Control, Model Predictive Control (MPC), Fuzzy Logic (MIMO Mamdani), Path Planning</div>
+            <div class="skill-group"><strong>Consensus Networks:</strong> Byzantine Fault Tolerance (BFT), Proof-of-Stake (PoS), Cryptographic Signature Trees</div>
+
+            <div class="cv-subhead">Robotics & Navigation Systems Experience</div>
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Lead Robotics Researcher / Graduate Research Assistant</span>
+                    <span class="exp-date">2023 -- Present</span>
+                </div>
+                <div class="exp-org">Robotics & Computer Vision Labs &middot; Fordham University</div>
+                <ul class="exp-bullets">
+                    <li>Engineered a novel cross-view landmark recognition framework for multi-agent visual navigation in GPS-denied environments, improving topological homing accuracy under dynamic viewpoint shifts.</li>
+                    <li>Architected and implemented <strong>RoboStake</strong>, a distributed Proof-of-Stake (PoS) consensus protocol coupled with Witness Byzantine Fault Tolerance (W-BFT) and signature trees for real-time robotic swarm navigation.</li>
+                    <li>Implemented real-time feature extraction, point cloud matching, and edge perception pipelines using OpenCV and CUDA, accelerating onboard processing loops on embedded hardware.</li>
+                    <li>Supervised undergraduate researchers in sensor calibration, camera-IMU fusion, and mobile robot kinematic control stacks.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-row-top">
+                    <span class="exp-role">Summer Undergraduate Research Supervisor (Robotics)</span>
+                    <span class="exp-date">May 2025 -- Aug 2025</span>
+                </div>
+                <div class="exp-org">Fordham University &middot; New York, NY</div>
+                <ul class="exp-bullets">
+                    <li>Supervised undergraduate researchers implementing autonomous navigation stacks, sensor calibration, and computer vision pipelines in ROS2 and Python, leading to reproducible software modules.</li>
+                </ul>
+            </div>
+
+            <div class="cv-subhead">Selected Robotics Publications</div>
+            <ul class="exp-bullets">
+                <li><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti. "Cross-View Landmark Recognition for Cooperative Visual Navigation." <em>SPIE Defense + Commercial Sensing</em>, 2026.</li>
+                <li>N. Desta, I. Vural, <strong>N. Paykari</strong>, D. Lyons, M. Rahouti. "Federated Visual Homing for Cooperative Multirobot Navigation in GPS-Denied Environments." <em>SPIE Defense + Commercial Sensing</em>, 2026.</li>
+                <li><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti. "A Novel Blockchain-Driven Proof-of-Stake Model for Cooperative Navigation in Visual Homing Robotic Teams." <em>ACM Distributed Ledger Technologies (DLT)</em>, 2025.</li>
+                <li><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti. "RoboStake: Pioneering Cooperative Navigation with a Novel Blockchain-Powered Proof-of-Stake in Robotic Teams." <em>IEEE COINS</em>, 2024.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Research Statement / Core Research Section -->
+    <section id="research" class="container">
+        <div class="section-header">
+            <div class="section-badge">Doctoral Research Program</div>
+            <h2 class="section-title">Cooperative Autonomy & Resilient Consensus</h2>
+            <p class="section-desc">My doctoral research addresses the dual vulnerability of autonomous fleets: perceptual ambiguity in GPS-denied physical space, and Byzantine faults in multi-agent communication networks.</p>
+        </div>
+
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <h3>Cross-View Landmark Recognition</h3>
+                <p>Developing deep feature factorization and invariant landmark representations that allow multi-robot visual homing to converge reliably even under extreme perspective distortion and lighting shifts.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>RoboStake & Witness-BFT</h3>
+                <p>Pioneering proof-of-navigation consensus with cryptographic signature trees, ensuring robotic teams agree on verified state estimates while mathematically proving safety under up to 33% malicious nodes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section (All 11 Papers) -->
+    <section id="publications" class="container" style="background-color: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="section-header">
+            <div class="section-badge">Scholarly Output</div>
+            <h2 class="section-title">Peer-Reviewed Publications</h2>
+            <p class="section-desc">Published across leading robotics, computer vision, and distributed systems proceedings and journals.</p>
+        </div>
+
+        <div class="pub-grid">
+            <!-- 1 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2026</span>
+                <div class="pub-card-title">Cross-View Landmark Recognition for Cooperative Visual Navigation</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">Proceedings of SPIE Defense + Commercial Sensing</div>
+                <div class="pub-tags">
+                    <span class="tag">Visual Homing</span>
+                    <span class="tag">Landmark Recognition</span>
+                    <span class="tag">GPS-Denied</span>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2026</span>
+                <div class="pub-card-title">Federated Visual Homing for Cooperative Multirobot Navigation in GPS-Denied Environments</div>
+                <div class="pub-card-authors">N. Desta, I. Vural, <strong>N. Paykari</strong>, D. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">Proceedings of SPIE Defense + Commercial Sensing</div>
+                <div class="pub-tags">
+                    <span class="tag">Federated Learning</span>
+                    <span class="tag">Multi-Agent</span>
+                    <span class="tag">Localization</span>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2025</span>
+                <div class="pub-card-title">A Novel Blockchain-Driven Proof-of-Stake Model for Cooperative Navigation in Visual Homing Robotic Teams</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">ACM Distributed Ledger Technologies: Research and Practice (DLT)</div>
+                <div class="pub-tags">
+                    <span class="tag">ACM Journal</span>
+                    <span class="tag">Proof-of-Stake</span>
+                    <span class="tag">Consensus</span>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2025</span>
+                <div class="pub-card-title">Witness Byzantine Fault Tolerance with Signature Tree and Proof-of-Navigation for Wide Area Visual Navigation</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, T. Clark, A. Zain, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">Proceedings of INSTICC</div>
+                <div class="pub-tags">
+                    <span class="tag">BFT</span>
+                    <span class="tag">Signature Tree</span>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2024</span>
+                <div class="pub-card-title">Enhancing Visual Homing in Robotics: A Study on Blockchain Integration and Consensus Algorithms</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">ACM Distributed Ledger Technologies: Research and Practice (DLT)</div>
+                <div class="pub-tags">
+                    <span class="tag">ACM Journal</span>
+                    <span class="tag">Consensus Analysis</span>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2024</span>
+                <div class="pub-card-title">RoboStake: Pioneering Cooperative Navigation with a Novel Blockchain-Powered Proof-of-Stake in Robotic Teams</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">Proceedings of IEEE International Conference on Omni-layer Intelligent Systems (COINS)</div>
+                <div class="pub-tags">
+                    <span class="tag">IEEE COINS</span>
+                    <span class="tag">RoboStake</span>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2024</span>
+                <div class="pub-card-title">Integrating Robotic Navigation with Blockchain: A Novel PoS-Based Approach for Heterogeneous Robotic Teams</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, A. Alfatemi, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">Ubiquitous Robots (UR) Conference <strong style="color:#d97706;">(Best Paper Finalist)</strong></div>
+                <div class="pub-tags">
+                    <span class="tag">Award Finalist</span>
+                    <span class="tag">Heterogeneous Fleets</span>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2024</span>
+                <div class="pub-card-title">Multi-label Classification with Deep Learning and Manual Data Collection for Identifying Similar Bird Species</div>
+                <div class="pub-card-authors">A. Alfatemi, S. Aljamal, <strong>N. Paykari</strong>, M. Rahouti, A. Chehri</div>
+                <div class="pub-card-venue">KES Conference</div>
+                <div class="pub-tags">
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Classification</span>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2024</span>
+                <div class="pub-card-title">Refining Bird Species Identification through GAN-Enhanced Data Augmentation and Deep Learning Models</div>
+                <div class="pub-card-authors">A. Alfatemi, S. Aljamal, <strong>N. Paykari</strong>, M. Rahouti, R. Amin, A. Chehri</div>
+                <div class="pub-card-venue">KES Conference</div>
+                <div class="pub-tags">
+                    <span class="tag">GANs</span>
+                    <span class="tag">Computer Vision</span>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2023</span>
+                <div class="pub-card-title">Assessing Blockchain Consensus in Robotics: A Visual Homing Approach</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, D.M. Lyons, M. Rahouti</div>
+                <div class="pub-card-venue">Proceedings of IEEE UEMCON (Columbia University / NYU)</div>
+                <div class="pub-tags">
+                    <span class="tag">IEEE UEMCON</span>
+                    <span class="tag">Visual Homing</span>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="pub-card">
+                <span class="pub-badge-year">2013</span>
+                <div class="pub-card-title">Design of MIMO Mamdani Fuzzy Logic Controllers for Wall Following Mobile Robot</div>
+                <div class="pub-card-authors"><strong>N. Paykari</strong>, S.H.R. Abbasi, F. Shabaninia</div>
+                <div class="pub-card-venue">Proceedings of SOFA Conference</div>
+                <div class="pub-tags">
+                    <span class="tag">MIMO Control</span>
+                    <span class="tag">Fuzzy Logic</span>
+                    <span class="tag">M.Sc. Research</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- University Teaching Experience -->
+    <section id="teaching" class="container">
+        <div class="section-header">
+            <div class="section-badge">Pedagogical Record</div>
+            <h2 class="section-title">Teaching & Student Mentorship</h2>
+            <p class="section-desc">Demonstrated record as Instructor of Record at Fordham University for graduate and undergraduate computing curricula.</p>
+        </div>
+
+        <div class="teaching-grid">
+            <div class="teach-card">
+                <div class="teach-role">Instructor of Record &middot; Graduate</div>
+                <h4>Programming with Python (CISC-5380)</h4>
+                <div class="teach-meta">
+                    <span>Fordham University</span>
+                    <span>&middot;</span>
+                    <span>Spring 2026</span>
+                </div>
+                <p class="teach-desc">
+                    Delivered full graduate curriculum for 7+ PhD and MS students covering fundamental and advanced programming, memory concepts, algorithm design, data structures, and object-oriented architectures.
+                </p>
+            </div>
+
+            <div class="teach-card">
+                <div class="teach-role">Instructor of Record &middot; Undergraduate</div>
+                <h4>Discrete Structures (CISC-1100)</h4>
+                <div class="teach-meta">
+                    <span>Fordham University</span>
+                    <span>&middot;</span>
+                    <span>Fall 2025</span>
+                </div>
+                <p class="teach-desc">
+                    Taught 20+ undergraduate computer science majors propositional logic, set theory, formal mathematical induction, combinatorics, and graph algorithms. Linked abstract concepts to hardware and digital logic.
+                </p>
+            </div>
+
+            <div class="teach-card">
+                <div class="teach-role">Research Leadership</div>
+                <h4>Summer Undergraduate Robotics Supervision</h4>
+                <div class="teach-meta">
+                    <span>Fordham University</span>
+                    <span>&middot;</span>
+                    <span>Summer 2025</span>
+                </div>
+                <p class="teach-desc">
+                    Mentored undergraduate students on hands-on ROS2 development, OpenCV sensor calibration, and mobile robot kinematics, guiding students toward conference paper submissions and graduate school preparation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Track Record (DCS / PLC / POMC) -->
+    <section id="industry" class="container" style="background-color: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="section-header">
+            <div class="section-badge">Industrial Engineering Background</div>
+            <h2 class="section-title">10+ Years in Control Systems & Automation</h2>
+            <p class="section-desc">Extensive proven field pedigree leading engineering teams on mission-critical refinery, petrochemical, and power generation infrastructure.</p>
+        </div>
+
+        <div class="experience-item" style="background:#ffffff; padding:1.5rem; border-radius:var(--radius); border:1px solid var(--border); margin-bottom:1.25rem;">
+            <div class="exp-row-top">
+                <span class="exp-role">Senior Control Systems Supervisor / Supervisor</span>
+                <span class="exp-date">2015 -- 2021</span>
+            </div>
+            <div class="exp-org">Petropars Operation & Management Company (POMC)</div>
+            <ul class="exp-bullets">
+                <li>Directed automation commissioning, loop checking, and startup for major energy projects.</li>
+                <li>Managed engineering teams through Site Acceptance Testing (SAT) for Siemens PCS7 and Yokogawa Centum DCS architectures.</li>
+                <li>Validated Emergency Shutdown (ESD) and Fire & Gas (FGS) trip matrices on HIMA safety PLCs.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item" style="background:#ffffff; padding:1.5rem; border-radius:var(--radius); border:1px solid var(--border);">
+            <div class="exp-row-top">
+                <span class="exp-role">Control & Instrumentation / Safety Engineer</span>
+                <span class="exp-date">2010 -- 2015</span>
+            </div>
+            <div class="exp-org">Parsian Group (P-GR) & Azar Imen Persian</div>
+            <ul class="exp-bullets">
+                <li>Designed complete instrumentation engineering packages: I/O allocation lists, logic diagrams, wiring schematics, cabinet layouts, and control narrative philosophies.</li>
+                <li>Programmed PLC logic and configured SCADA / HMI graphical user interfaces in Siemens WinCC.</li>
+                <li>Supervised panel assembly, factory acceptance tests (FAT), and field device commissioning for power plant safety systems.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- News & Milestones -->
+    <section id="news" class="container">
+        <div class="section-header">
+            <div class="section-badge">Updates</div>
+            <h2 class="section-title">Recent Milestones & News</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2026</div>
+                <div class="timeline-text">Presented research on <strong>Cross-View Landmark Recognition</strong> and <strong>Federated Visual Homing</strong> at <em>SPIE Defense + Commercial Sensing</em> (National Harbor, MD).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Spring 2026</div>
+                <div class="timeline-text">Serving as Instructor of Record for graduate-level <strong>Programming with Python (CISC-5380)</strong> at Fordham University.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025</div>
+                <div class="timeline-text">Competed in the university-wide <strong>3MT (Three Minute Thesis) Competition</strong>; awarded <em>Summer Undergraduate Research Supervisor</em> role.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024</div>
+                <div class="timeline-text">Paper candidate for <strong>Best Paper Award</strong> at the <em>Ubiquitous Robots (UR 2024)</em> Conference at NYU. <strong>Preparing Future Faculty (PFF)</strong> program.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h4>Nasim Paykari, Ph.D. Candidate</h4>
+                <p>Bridging dynamic control systems, visual robotics, and decentralized consensus networks. Open to Senior Robotics Software Engineering, Lead Industrial Automation, and Academic Faculty/Postdoc roles.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#cv-suite">CV Suite (3 Tracks)</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#industry">Industrial Track</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Connect</h5>
+                <ul>
+                    <li><a href="mailto:Paykari.Nasim@gmail.com">Email</a></li>
+                    <li><a href="https://linkedin.com/in/nasimpaykari" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/nasimpaykari" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nasim Paykari. Designed for GitHub Pages. Built with clean, standards-compliant HTML5, CSS3, and JavaScript.
+        </div>
+    </footer>
+
+    <!-- Interactive Track Switcher Script -->
+    <script>
+        function switchTrack(trackId, btnElement) {
+            // Hide all panels
+            const panels = document.querySelectorAll('.cv-content-panel');
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+
+            // Remove active class from all tab buttons
+            const buttons = document.querySelectorAll('.cv-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            // Activate chosen panel and button
+            const targetPanel = document.getElementById(trackId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+            if (btnElement) {
+                btnElement.classList.add('active');
+                btnElement.setAttribute('aria-selected', 'true');
+            }
+        }
+    </script>
 </body>
 </html>
-
